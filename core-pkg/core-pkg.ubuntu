@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
+core_pkg="zsh stow gawk git"
+
+type $core_pkg && exit 0
+
 apt-get update
-apt-get install -y zsh stow gawk git
+apt-get install -y $core_pkg
