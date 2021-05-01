@@ -1,0 +1,5 @@
+git.pkg:
+	stow --dotfiles -t $(HOME) git
+
+git.clean:
+	stow --dotfiles --delete -t $(HOME) git

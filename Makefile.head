@@ -1,0 +1,13 @@
+SHELL = /bin/bash
+
+DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+PATH := $(DOTFILES_DIR)/bin:$(PATH)
+export STOW_DIR = $(DOTFILES_DIR)
+
+OS := $(shell bin/is-supported bin/is-macos macos ubuntu)
+
+.PHONY: test clean ubuntu macos
+
+$(OS):
+	sh $(DOTFILES_DIR)/core-pkg/core-pkg.$(OS)
+
