@@ -1,2 +1,5 @@
+$(OS):
+	sh $(DOTFILES_DIR)/core-pkg/core-pkg.$(OS)
+
 clean: $(pkglist:=.clean)
 

@@ -17,12 +17,9 @@ sup_pkg="git vim"
 
 # pkg list
 echo "pkglist=$sup_pkg" > Makefile.tmp
+echo -e "" >> Makefile.tmp
 echo "all: \$(OS) \$(pkglist:=.pkg)" >> Makefile.tmp
 echo -e "" >> Makefile.tmp
-
-# pkg clean
-echo "clean: \$(pkglist:=.clean)" > Makefile.tail
-echo -e "" >> Makefile.tail
 
 # Collect the config file
 for subdir in $sup_pkg

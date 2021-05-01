@@ -8,6 +8,3 @@ OS := $(shell bin/is-supported bin/is-macos macos ubuntu)
 
 .PHONY: test clean ubuntu macos
 
-$(OS):
-	sh $(DOTFILES_DIR)/core-pkg/core-pkg.$(OS)
-
