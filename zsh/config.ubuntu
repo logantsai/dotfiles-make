@@ -1,0 +1,8 @@
+zsh.pkg:
+	[ -e zsh/dot-zplug ] || git clone https://github.com/zplug/zplug zsh/dot-zplug
+	stow --dotfiles -t $(HOME) zsh
+
+zsh.clean:
+	stow --delete --dotfiles -t $(HOME) zsh
+	[ -e zsh/dot-zplug ] && rm -rf zsh/dot-zplug
+

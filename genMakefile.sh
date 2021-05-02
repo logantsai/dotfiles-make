@@ -13,7 +13,7 @@ fi
 
 echo "---- Generate $platform Makefile ----"
 
-sup_pkg="git vim tmux"
+sup_pkg="git vim tmux zsh"
 
 # makefile.middle
 echo "pkglist=$sup_pkg" > Makefile.tmp
