@@ -1,0 +1,5 @@
+tmux.pkg:
+	stow --dotfiles -t $(HOME) tmux
+
+tmux.clean:
+	stow --delete --dotfiles -t $(HOME) tmux

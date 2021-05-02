@@ -11,11 +11,11 @@ else
     exit 1
 fi
 
-echo "---- $platform ----"
-sup_pkg="git vim"
+echo "---- Generate $platform Makefile ----"
 
+sup_pkg="git vim tmux"
 
-# pkg list
+# makefile.middle
 echo "pkglist=$sup_pkg" > Makefile.tmp
 echo -e "" >> Makefile.tmp
 echo "all: \$(OS) \$(pkglist:=.pkg)" >> Makefile.tmp

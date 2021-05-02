@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-core_pkg="zsh stow gawk git"
+core_pkg="zsh stow gawk git tmux"
 
 type $core_pkg && exit 0
 
