@@ -16,6 +16,7 @@
     " Color {
         Plugin 'rafi/awesome-vim-colorschemes' "{
         " }
+        Plugin 'connorholyday/vim-snazzy'
     " }
 
     " Editor {
@@ -48,4 +49,4 @@
     " }
 " }
 
-colo OceanicNext
+colo snazzy
