@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-core_pkg="zsh stow gawk git tmux"
+core_pkg="zsh stow gawk git tmux starship"
 
 type $core_pkg && exit 0
 
+
 apt-get update
 apt-get install -y $core_pkg
+
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+

@@ -1,0 +1,7 @@
+starship.pkg:
+	@if ! is-executable starship; then echo "Please install starship first"; exit 1; fi
+	[ -e $$HOME/.config ] || mkdir $$HOME/.config
+	stow -t $$HOME/.config starship
+
+starship.clean:
+	stow --delete -t $$HOME/.config starship
