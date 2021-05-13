@@ -4,5 +4,5 @@ zsh.pkg:
 
 zsh.clean:
 	stow --delete --dotfiles -t $(HOME) zsh
-	[ -e zsh/dot-zplug ] && rm -rf zsh/dot-zplug
+	[ -e zsh/dot-zplug ] && sudo rm -rf zsh/dot-zplug
 
