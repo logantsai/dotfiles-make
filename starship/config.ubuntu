@@ -6,3 +6,7 @@ starship.pkg:
 
 starship.clean:
 	stow --delete -t $$HOME/.config starship
+
+
+starship.test:
+	append 'eval "$$(starship init bash)"' $$HOME/.bashrc
