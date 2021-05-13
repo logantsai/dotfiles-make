@@ -5,7 +5,7 @@ non_deb_pkg="starship"
 
 type $core_pkg && exit 0
 apt-get update
-apt-get install -y $core_pkg
+sudo apt-get install -y $core_pkg
 
 type $non_deb_pkg && exit 0
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"

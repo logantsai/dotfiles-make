@@ -2,6 +2,7 @@ starship.pkg:
 	@if ! is-executable starship; then echo "Please install starship first"; exit 1; fi
 	[ -e $$HOME/.config ] || mkdir $$HOME/.config
 	stow -t $$HOME/.config starship
+	@if ! grep -qF 'starship' ~/.bashrc; then echo 'eval "$$(starship init bash)"' | tee -a ~/.bashrc > /dev/null; fi
 
 starship.clean:
 	stow --delete -t $$HOME/.config starship
