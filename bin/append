@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-APPEND="$1"
-TARGET="$2"
+STR="$1"
+FILE="$2"
 
-grep -s "$APPEND" "$TARGET" || echo "$APPEND" >> "$TARGET"
+# Usage:
+# ./bin/append 'str' file
+# You shouldn't add single quota on file, and must add on str.
+
+if ! grep -qF "$STR" "$FILE"; then
+    echo $1 | tee -a $FILE > /dev/null;
+fi
