@@ -51,8 +51,10 @@
     noremap <C-l> :vertical resize +1<CR>
 
     " - indent and unindent on each mode
-    nnoremap <Tab> >>_
-    nnoremap <S-Tab> <<_
+    "nnoremap <Tab> >>_
+    "nnoremap <S-Tab> <<_
+    vnoremap > >gv
+    vnoremap < <gv
     " inoremap <S-Tab> <C-D>
     " vnoremap <Tab> >gv
     " remap <S-Tab> <gv
