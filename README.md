@@ -13,3 +13,4 @@
 - sudo apt-get install -y make git
 - git clone `this repository` ~/.dotfiles
 - cd ~/.dotfiles && ./genMaekfile && make
+  PS: sudo make will set $HOME as /root, not /home/$USER
