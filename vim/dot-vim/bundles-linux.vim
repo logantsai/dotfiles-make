@@ -36,6 +36,7 @@
             let g:tagbar_autofocus = 1
         " }
         Plugin 'charz/multi-cscope-db'
+        Plugin 'chrisbra/vim-autoread'
     " }
 
     " C/C++ {
