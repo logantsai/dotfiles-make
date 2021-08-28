@@ -1,4 +1,6 @@
 Makefile
 vim/dot-vim/bundle
+vim/dot-vim/autoload
+vim/dot-vim/plugged
 vim/dot-vim/.netrwhist
 zsh/dot-zplug

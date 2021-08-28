@@ -1,29 +1,60 @@
-" Vundle Plugins {
-    if filereadable(expand('~/.vim/bundles-linux.vim'))
-        source ~/.vim/bundles-linux.vim
+" Vim Plug {
+    if filereadable(expand('~/.vim/plug-bundles.vim'))
+        source ~/.vim/plug-bundles.vim
     endif
 " }
 
-" Basic Setting {
+"  Basic Setting {
     syntax on
     set backspace=indent,eol,start
-    set nu
-    set tabstop=4
+    set clipboard=unnamed
+    set number
+
+    set tabstop=4       " tab show 4 space
+    set softtabstop=4   " tab insert 4 space
     set shiftwidth=4
     set expandtab
+
     set hlsearch
+    set incsearch
+
     set encoding=utf8
+
+    set showtabline=2   " always show tab page
+    set splitbelow      " split window down
+    set splitright      " split window right
+
+    set wrap
+    set linebreak       " as wrap, use word to break
+
+    set showcmd
+
+    set scrolloff=3
+
+    filetype on
+    filetype indent on
+    filetype plugin on
 " }
 
 " Cursorline Setting {
     set cursorline
-    hi CursorLine cterm=NONE ctermbg=238
+    hi CursorLine cterm=underline ctermbg=238
     hi CursorLineNr cterm=bold ctermbg=Red ctermbg=NONE
 
 " }
 
+" autocmd {
+    " 視窗切換時候顯示/隱藏游標底線
+    autocmd WinEnter * setlocal cursorline
+    autocmd WinLeave * setlocal nocursorline
+
+    " 存檔時自動把行末多餘的空白刪除
+    autocmd BufWritePre * :%s/\s\+$//e
+" }
+
+
 " Python {
-    au BufNewFile,BufRead *.py
+    autocmd BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
@@ -51,8 +82,8 @@
     noremap <C-l> :vertical resize +1<CR>
 
     " - indent and unindent on each mode
-    "nnoremap <Tab> >>_
-    "nnoremap <S-Tab> <<_
+    " nnoremap <Tab> >>_
+    " nnoremap <S-Tab> <<_
     vnoremap > >gv
     vnoremap < <gv
     " inoremap <S-Tab> <C-D>

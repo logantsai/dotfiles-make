@@ -1,12 +1,24 @@
 #!/usr/bin/env bash
 
 core_pkg="zsh stow gawk git tmux"
-non_deb_pkg="starship"
+os_version=$(lsb_release -rs)
 
-type $core_pkg && exit 0
-apt-get update
-sudo apt-get install -y $core_pkg
+if ! type $core_pkg; then
+    apt-get update
+    sudo apt-get install -y $core_pkg
+fi
 
-type $non_deb_pkg && exit 0
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+if ! type starship; then
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+fi
 
+if ! type fzf; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+fi
+
+
+if [ $(echo "$os_version > 18.10" | bc) -eq 1 ] && ! type rg;
+then
+    sudo apt-get install ripgrep
+fi
