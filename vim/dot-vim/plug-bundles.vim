@@ -20,10 +20,18 @@
     " Color {
         Plug 'rafi/awesome-vim-colorschemes'
         Plug 'connorholyday/vim-snazzy'
+        Plug 'gruvbox-community/gruvbox'
     " }
 
+    " git {
+        Plug 'tpope/vim-fugitive'
+        Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+            set updatetime=100
+            nnoremap <leader>gp :SignifyHunkDiff<cr>
+            nnoremap <leader>gu :SignifyHunkUndo<cr>
+    "}
+
     " Editor {
-        Plug 'airblade/vim-gitgutter'
         Plug 'tpope/vim-surround'
         Plug 'tpope/vim-commentary'
         Plug 'ntpeters/vim-better-whitespace'
@@ -52,6 +60,8 @@
         Plug 'mileszs/ack.vim' "{
             if executable('rg')
                 let g:ackprg = 'rg --vimgrep'
+            elseif executable('ag')
+                let g:ackprg = 'ag --vimgrep'
             endif
         "}
     " }
@@ -66,5 +76,4 @@
         call plug#end()		" required
     " }
 " }
-silent! colorscheme snazzy
-
+silent! colorscheme gruvbox
