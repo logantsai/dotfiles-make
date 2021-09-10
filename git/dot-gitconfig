@@ -21,6 +21,7 @@
     ci = commit
     br = branch
     co = checkout
+    wk = worktree
     df = diff
     dc = diff --cached
     dc-name = diff --name-only --cached
