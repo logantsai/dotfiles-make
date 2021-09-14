@@ -42,6 +42,7 @@
         Plug 'vim-airline/vim-airline-themes'
             let g:airline_theme='molokai'
         Plug 'vim-utils/vim-alt-mappings'
+        Plug 'ojroques/vim-oscyank'
     " }
 
     " Tracing and Debug {
@@ -53,7 +54,7 @@
         Plug 'charz/multi-cscope-db'
         Plug 'chrisbra/vim-autoread'
     " }
-    "
+
     " Search {
         Plug '~/.fzf', { 'do': { -> fzf#install() } }
         Plug 'junegunn/fzf.vim'
