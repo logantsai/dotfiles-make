@@ -1,0 +1,9 @@
+vim.pkg:
+	ln -s $(DOTFILES_DIR)/vim/dot-vim $$HOME/.vim
+	#[ -e $$HOME/.vim/bundle ] || mkdir -p $$HOME/.vim/bundle
+	#[ -e $$HOME/.vim/bundle/Vundle.vim ] || git clone https://github.com/VundleVim/Vundle.vim.git $$HOME/.vim/bundle/Vundle.vim
+	vim +PlugInstall +qall
+
+vim.clean:
+	[ -e $$HOME/.vim/plugged ] && sudo rm -rf $$HOME/.vim/plugged
+	rm $$HOME/.vim

@@ -32,6 +32,9 @@
     set showcmd
 
     set scrolloff=3
+    set sidescrolloff=5
+
+    set colorcolumn=80  " highlight col80
 
     filetype on
     filetype indent on
@@ -46,7 +49,7 @@
 " }
 
 " autocmd {
-    " 視窗切換時候顯示/隱藏游標底線
+    " Show/hide cursor underline as window is switched
     autocmd WinEnter * setlocal cursorline
     autocmd WinLeave * setlocal nocursorline
 " }
@@ -75,10 +78,10 @@
     cnoremap <F5> <C-c>:set list!<CR>
 
     " - resize window CTRL+(h|j|k|l)
-    noremap <C-j> :resize +1<CR>
-    noremap <C-k> :resize -1<CR>
-    noremap <C-h> :vertical resize -1<CR>
-    noremap <C-l> :vertical resize +1<CR>
+    " noremap <C-j> :resize +1<CR>
+    " noremap <C-k> :resize -1<CR>
+    " noremap <C-h> :vertical resize -1<CR>
+    " noremap <C-l> :vertical resize +1<CR>
 
     " - indent and unindent on each mode
     vnoremap > >gv
@@ -134,4 +137,10 @@
     function! ClearTailSp()
         :%s/\s\+$//e
     endfunction
+
+    augroup deletePluginCommand
+        autocmd!
+        autocmd VimEnter * delcommand Windows
+    augroup END
+
 " }

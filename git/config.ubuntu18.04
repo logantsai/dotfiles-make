@@ -1,0 +1,5 @@
+git.pkg:
+	ln -s $(DOTFILES_DIR)/git/dot-gitconfig $(HOME)/.gitconfig
+
+git.clean:
+	rm  $(HOME)/.gitconfig

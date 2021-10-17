@@ -1,0 +1,5 @@
+tmux.pkg:
+	ln -s $(DOTFILES_DIR)/tmux/dot-tmux.confg $(HOME)/.tmux.conf 
+
+tmux.clean:
+	rm $(HOME)/.tmux.conf

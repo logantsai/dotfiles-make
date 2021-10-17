@@ -1,0 +1,11 @@
+starship.pkg:
+	@if ! is-executable starship; then echo "Please install starship first"; exit 1; fi
+	[ -e $$HOME/.config ] || mkdir $$HOME/.config
+	ln -s $(DOTFILES_DIR)/starship/starship.toml $(HOME)/.config/starship.toml
+	@if ! grep -qF 'starship' ~/.bashrc; then echo 'eval "$$(starship init bash)"' | tee -a ~/.bashrc > /dev/null; fi
+
+starship.clean:
+	rm $(HOME)/.config/starship.toml
+
+starship.test:
+	append 'eval "$$(starship init bash)"' $$HOME/.bashrc
