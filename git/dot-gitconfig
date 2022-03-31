@@ -30,6 +30,11 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     logp = log --date=iso --pretty='format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(white)%s %C(magenta) [%an]%Creset'
     logpn = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --name-only
+    
+    hide = update-index --assume-unchanged
+    unhide = update-index --no-assume-unchanged
+    hidden = !git ls-files -v | grep \"^[a-z]\"
+
 
 [include]
     path = .gitconfig.user
